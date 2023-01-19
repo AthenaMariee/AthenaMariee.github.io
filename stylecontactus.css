@@ -7,7 +7,7 @@
 }
 
 body {
-	overflow: hidden;
+	overflow: fixed;
 }
 
 .main-width {
@@ -25,6 +25,7 @@ body {
 	background-size: cover;
 	background-position: center;
 	position: relative;
+	background-attachment: fixed;
 }
 
 header {
@@ -49,6 +50,31 @@ header {
 	cursor: pointer;
 }
 
+nav .hamb {
+	width: 35px;
+	height: 24px;
+	right: 3%;
+	top: 60px;
+	z-index: 5;
+	background: transparent;
+	position: absolute;
+	cursor: pointer;
+	display: none;
+}
+
+nav .hamb span {
+	display: block;
+	background: #E97451;
+	width: 100%;
+	height: 3px;
+	transition: .3s;
+	transition-property: transform, opacity;
+}
+
+nav .hamb span:nth-child(2) {
+	margin: 7px 0px;
+}
+
 nav .nav-list {
 	list-style: none;
 }
@@ -65,9 +91,9 @@ nav .nav-list li a {
 	font-weight: 500;
 }
 
-nav .nav-list li a:hover {
+nav .nav-list li:not(:last-child) a:hover {
 	color: #E97451;
-	transition: .4s;
+	transition: .4s; 
 }
 
 nav .nav-list li.btn a {
@@ -203,11 +229,14 @@ ul li:hover ul.dropdown {
 	transition: .4s;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 930px) {
 	nav .hamb {
 		display: initial;
 	}
-	.click span{
+	.click {
+		top: 46px;
+	}
+	.click span {
 		position: absolute;
 		margin-top: 12px;
 	}
@@ -218,8 +247,8 @@ ul li:hover ul.dropdown {
 		opacity: 0;
 		margin: 0;
 	}
-	.click span:last-child{
-		transform: rotate(40deg);
+	.click span:last-child {
+		transform: rotate(45deg);
 		top: 0;
 	}
 	nav .nav-list {
@@ -227,9 +256,9 @@ ul li:hover ul.dropdown {
 		top: 90px;
 		right: -65%;
 		bottom: 0;
-		width: 40%;
-		height: 80%;
-		background: black;
+		width: 60%;
+		height: 27%;
+		background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
 		z-index: 2;
 		padding: 6% 9%;
 		transition: .3s right;
@@ -241,7 +270,7 @@ ul li:hover ul.dropdown {
 	nav .nav-list li a {
 		display: block;
 		text-align: center;
-		font-size: 18px;
+		font-size: 15px;
 		font-weight: 400;
 		margin-left: 0;
 		margin-bottom: 40px;
@@ -250,11 +279,22 @@ ul li:hover ul.dropdown {
 		position: absolute;
 		bottom: 0%;
 		right: 20%;
-		left: 30%;
+		left: 20%;
 		padding: 7px 15px;
 		font-size: 14px;
 	}
 	nav .nav-list.open {
 		right: 0;
+	}
+	ul li ul.dropdown {
+		width: 60%;
+		background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
+		position: absolute;
+		z-index: 999;
+		display: none;
+		border-radius: 20px;
+		margin: 0px;
+		right: 70%;
+		bottom: 0%;
 	}
 }
