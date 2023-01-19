@@ -237,7 +237,7 @@ ul li:hover ul.dropdown {
 		right: -65%;
 		bottom: 0;
 		width: 60%;
-		height: 27%;
+		height: 75%;
 		background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
 		z-index: 2;
 		padding: 6% 9%;
